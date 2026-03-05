@@ -1,4 +1,5 @@
 /* script.js - FULLY UPDATED VERSION (Skincare & Deodorants Corrected) */
+/* script.js - UPDATED VERSION (Best Sellers = Random 4 Full Sets) */
 
 // ------------------------------------------------------------------
 // 1. FIREBASE SETUP
@@ -555,7 +556,7 @@ const products = [
         name: "Beautiforia Roll-on", 
         nameAr: "رول-أون بيوتيفوريا", 
         price: 150, 
-        image: "images/roll black.jpeg", 
+        image: "images/roll .jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
         desc: `<strong>✨ الانتعاش اللي بتدوري عليه مع Beautiforia! ✨</strong><br>
@@ -571,7 +572,7 @@ const products = [
         name: "Whitening Roll-on (Black)", 
         nameAr: "رول أون التفتيح الأسود", 
         price: 150, 
-        image: "images/roll.jpeg", 
+        image: "images/roll black.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
         desc: `<strong>حماية وانتعاش.. مع ميزة التفتيح المتطور!</strong><br>
@@ -644,7 +645,16 @@ const products = [
         • <strong>عبير الفواكه (Fruity Scent):</strong> يتميز برائحة الفواكه المنعشة والأنثوية التي تدوم معكِ طويلاً.<br>
         • <strong>حماية تدوم 24 ساعة:</strong> يوفر تغطية كاملة وحماية فائقة من روائح العرق المزعجة على مدار الساعة.<br>
         • <strong>تركيبة لطيفة:</strong> ناعم جداً على البشرة ولا يسبب أي تهيج، مما يجعله مثاليًا للاستخدام اليومي.` 
-    }
+    },
+    
+    // --- OTHER PRODUCTS (IDs SHIFTED to 46+ TO AVOID OVERLAPPING WITH DEODORANTS/SKINCARE) ---
+    { id: 46, name: "Hair Wax Stick", nameAr: "واكس ستيك للشعر", price: 250, image: "https://placehold.co/600x800/333/FFF?text=Hair+Wax", category: "Hair Care", volume: "75g", desc: "تصفيف مثالي." },
+    { id: 47, name: "Sunscreen SPF50+", nameAr: "واقي شمس SPF50+", price: 400, image: "https://placehold.co/600x800/FFA500/FFF?text=Sunscreen", category: "Skincare", volume: "50ml", desc: "حماية قصوى." },
+    { id: 48, name: "Collagen Cream", nameAr: "كريم كولاجين", price: 450, image: "https://placehold.co/600x800/ADD8E6/000?text=Collagen", category: "Skincare", volume: "100ml", desc: "نضارة وشباب." },
+    { id: 49, name: "Violet Rose Whitening Deo", nameAr: "مزيل عرق فيوليت روز", price: 150, image: "https://placehold.co/600x800/EE82EE/000?text=Violet+Deo", category: "Deodorant", volume: "50ml", desc: "حماية وتفتيح." },
+    { id: 50, name: "Night Kiss Whitening Deo", nameAr: "مزيل عرق نايت كيس", price: 150, image: "https://placehold.co/600x800/191970/FFF?text=Night+Deo", category: "Deodorant", volume: "50ml", desc: "جاذبية المساء." },
+    { id: 51, name: "Oud Sauvage Whitening Deo", nameAr: "مزيل عرق عود سوفاج", price: 150, image: "https://placehold.co/600x800/8B4513/FFF?text=Oud+Deo", category: "Deodorant", volume: "50ml", desc: "فخامة العود." },
+    { id: 52, name: "Blacknight Whitening Deo", nameAr: "مزيل عرق بلاك نايت", price: 150, image: "https://placehold.co/600x800/000/FFF?text=Blacknight", category: "Deodorant", volume: "50ml", desc: "قوة وثقة." }
 ];
 
 // 3. LOAD CART
@@ -690,10 +700,12 @@ function renderProducts(items, container) {
         const card = document.createElement('div');
         card.className = 'product-card';
         
+        const isBodyMist = product.category === "Body Mist";
         const priceDisplay = `EGP ${product.price}`;
         
-        // ALL products can be added to the cart
-        const buttonHtml = `<button class="btn" onclick="addToCart(${product.id})">Add to Cart</button>`;
+        const buttonHtml = isBodyMist 
+            ? `<button class="btn" onclick="addToCart(${product.id})">Add to Cart</button>`
+            : `<button class="btn" disabled style="background-color:#ccc; color:#666; cursor:not-allowed;">Coming Soon</button>`;
 
         card.innerHTML = `
             <a href="product-details.html?id=${product.id}">
@@ -728,8 +740,10 @@ if (detailContainer) {
             sizeHtml = `<p><strong>Volume:</strong> ${product.volume}</p>`;
         }
 
-        // Make "Add to Cart" available for all loaded products
-        const buttonHtml = `<button class="btn" style="width:100%; max-width:300px; padding:15px;" onclick="addToCart(${product.id})">Add to Cart</button>`;
+        const isBodyMist = product.category === "Body Mist";
+        const buttonHtml = isBodyMist
+            ? `<button class="btn" style="width:100%; max-width:300px; padding:15px;" onclick="addToCart(${product.id})">Add to Cart</button>`
+            : `<button class="btn" disabled style="width:100%; max-width:300px; padding:15px; background-color:#ccc; color:#666; cursor:not-allowed;">Coming Soon</button>`;
 
         detailContainer.innerHTML = `
             <div class="detail-image"><img src="${product.image}" alt="${product.name}"></div>
@@ -738,7 +752,7 @@ if (detailContainer) {
                 <h2 style="color:#666; margin-bottom:10px;">${product.nameAr}</h2>
                 <div style="border-bottom:1px solid #ddd; padding-bottom:15px; margin-bottom:15px;">
                     <span id="price-display" style="font-size:1.8rem; color:#b12704; font-weight:bold;">EGP ${product.price}</span>
-                    <br><span style="color:#007600; font-weight:bold;">In Stock</span>
+                    <br><span style="color:#007600; font-weight:bold;">${isBodyMist ? "In Stock" : "Coming Soon"}</span>
                 </div>
                 <div style="background:#f3f3f3; padding:15px; border-radius:5px; margin-bottom:20px;">
                     <p><strong>Category:</strong> ${product.category}</p>
