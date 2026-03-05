@@ -556,7 +556,7 @@ const products = [
         name: "Beautiforia Roll-on", 
         nameAr: "رول-أون بيوتيفوريا", 
         price: 150, 
-        image: "images/roll .jpeg", 
+        image: "images/roll black.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
         desc: `<strong>✨ الانتعاش اللي بتدوري عليه مع Beautiforia! ✨</strong><br>
@@ -572,7 +572,7 @@ const products = [
         name: "Whitening Roll-on (Black)", 
         nameAr: "رول أون التفتيح الأسود", 
         price: 150, 
-        image: "images/roll black.jpeg", 
+        image: "images/roll.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
         desc: `<strong>حماية وانتعاش.. مع ميزة التفتيح المتطور!</strong><br>
