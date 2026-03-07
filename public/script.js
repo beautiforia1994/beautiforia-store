@@ -1,4 +1,4 @@
-/* script.js - FULLY UPDATED VERSION (Placeholders Removed & All Items Available) */
+/* script.js - FULLY UPDATED VERSION (Discounts Applied & Combos Removed) */
 
 // ------------------------------------------------------------------
 // 1. FIREBASE SETUP
@@ -28,7 +28,7 @@ const products = [
     // --- 1. NOIR (Men) ---
     {
         id: 1, name: "Noir - 125ml", nameAr: "عطر النوار - عبوة صغيرة",
-        price: 150, image: "small/noir small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/noir small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>أناقة الغموض… وانتعاش يدوم.</strong><br>
         بودي ميست مصمم خصيصًا للرجل الواثق، برائحة خشبية مائية تعكس الأناقة، العمق، والحضور الهادئ، مستوحى من عطر Voyage.<br><br>
         <strong>لماذا تختار Noir؟</strong><br>
@@ -40,7 +40,7 @@ const products = [
     },
     {
         id: 2, name: "Noir - 225ml", nameAr: "عطر النوار - عبوة كبيرة",
-        price: 225, image: "big/noir big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/noir big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>أناقة الغموض… وانتعاش يدوم.</strong><br>
         بودي ميست مصمم خصيصًا للرجل الواثق، برائحة خشبية مائية تعكس الأناقة، العمق، والحضور الهادئ، مستوحى من عطر Voyage.<br><br>
         <strong>لماذا تختار Noir؟</strong><br>
@@ -50,23 +50,11 @@ const products = [
         • <strong>ثبات وانتشار ممتاز:</strong> رائحة واضحة وأنيقة تدوم لساعات، مناسبة للأجواء الحارة والاستخدام اليومي.<br><br>
         <em>العبوة الكبيرة للتوفير.</em>`
     },
-    {
-        id: 3, name: "Noir - Full Set", nameAr: "عطر النوار - الطقم الكامل",
-        price: 300, image: "images/noir men.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>أناقة الغموض… وانتعاش يدوم.</strong><br>
-        بودي ميست مصمم خصيصًا للرجل الواثق، برائحة خشبية مائية تعكس الأناقة، العمق، والحضور الهادئ، مستوحى من عطر Voyage.<br><br>
-        <strong>لماذا تختار Noir؟</strong><br>
-        • <strong>رائحة خشبية مائية (Woody – Aquatic):</strong> مزيج متوازن بين دفء الأخشاب وانتعاش النوتات المائية، يمنحك إحساسًا بالنظافة والقوة في آنٍ واحد.<br>
-        • <strong>مكونات فاخرة:</strong> تركيبة غنية من المسك، خشب الأرز، والعنبر، مع لمسة من طحالب السنديان لعمق وثبات الميست.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> يحتوي على الألوفيرا وفيتامين C لترطيب خفيف ومنعش بدون إحساس دهني.<br>
-        • <strong>ثبات وانتشار ممتاز:</strong> رائحة واضحة وأنيقة تدوم لساعات، مناسبة للأجواء الحارة والاستخدام اليومي.<br><br>
-        <em>احصل على العبوتین معاً بسعر خاص.</em>`
-    },
 
     // --- 2. WOMAN SUGAR ---
     {
         id: 4, name: "Woman Sugar - 125ml", nameAr: "وومان شوجر - عبوة صغيرة",
-        price: 150, image: "small/woman small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/woman small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>أنوثة طاغية… وسحر لا يقاوم.</strong><br>
         دلّلي نفسك مع Woman Sugar Body Mist من Beautiforia، عطر يجسّد الرقة والجاذبية في كل رشّة. تركيبة سكرية زهرية ناعمة تمنحك إحساسًا بالبهجة والأنوثة، مستوحى من عطر A Thousand Wishes من Bath & Body Works.<br><br>
         <strong>لماذا ستحبين Woman Sugar؟</strong><br>
@@ -78,7 +66,7 @@ const products = [
     },
     {
         id: 5, name: "Woman Sugar - 225ml", nameAr: "وومان شوجر - عبوة كبيرة",
-        price: 225, image: "big/woman big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/woman big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>أنوثة طاغية… وسحر لا يقاوم.</strong><br>
         دلّلي نفسك مع Woman Sugar Body Mist من Beautiforia، عطر يجسّد الرقة والجاذبية في كل رشّة. تركيبة سكرية زهرية ناعمة تمنحك إحساسًا بالبهجة والأنوثة، مستوحى من عطر A Thousand Wishes من Bath & Body Works.<br><br>
         <strong>لماذا ستحبين Woman Sugar؟</strong><br>
@@ -88,23 +76,11 @@ const products = [
         • <strong>ثبات وانتشار أنيق:</strong> حضور أنثوي واضح يدوم لساعات بدون مبالغة.<br><br>
         <em>العبوة الكبيرة.</em>`
     },
-    {
-        id: 6, name: "Woman Sugar - Full Set", nameAr: "وومان شوجر - الطقم الكامل",
-        price: 300, image: "images/woman sugar.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>أنوثة طاغية… وسحر لا يقاوم.</strong><br>
-        دلّلي نفسك مع Woman Sugar Body Mist من Beautiforia، عطر يجسّد الرقة والجاذبية في كل رشّة. تركيبة سكرية زهرية ناعمة تمنحك إحساسًا بالبهجة والأنوثة، مستوحى من عطر A Thousand Wishes من Bath & Body Works.<br><br>
-        <strong>لماذا ستحبين Woman Sugar؟</strong><br>
-        • <strong>مزيج سكري زهري (Sugary – Floral):</strong> توليفة تجمع بين حلاوة السكر ورقّة الزهور لإطلالة أنثوية دافئة ومشرقة.<br>
-        • <strong>مكونات غنية وفوّاحة:</strong> السكر، الفاوانيا (Peony)، الفريسيا، البروسيكو، والعنبر—رائحة ناعمة، حيوية، ومليئة بالأنوثة.<br>
-        • <strong>عناية فائقة بالبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لترطيب خفيف ومنح البشرة ملمسًا حريريًا وانتعاشًا يدوم.<br>
-        • <strong>ثبات وانتشار أنيق:</strong> حضور أنثوي واضح يدوم لساعات بدون مبالغة.<br><br>
-        <em>العرض الأوفر (عبوة صغيرة + كبيرة).</em>`
-    },
 
     // --- 3. LOVELY ---
     {
         id: 7, name: "Lovly - 125ml", nameAr: "لافلي - عبوة صغيرة",
-        price: 150, image: "small/lovely small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/lovely small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>تناغم الرقة والدفء في زجاجة واحدة.</strong><br>
         يجمع Lovely Body Mist من Beautiforia بين عبير الزهور الفوّاحة ودفء الأخشاب الناعمة، ليمنحكِ تجربة عطرية متوازنة تجمع بين الأنوثة والأناقة، مستوحى من عطر You’re The One من Bath & Body Works.<br><br>
         <strong>لماذا تختارين Lovely؟</strong><br>
@@ -115,7 +91,7 @@ const products = [
     },
     {
         id: 8, name: "Lovly - 225ml", nameAr: "لافلي - عبوة كبيرة",
-        price: 225, image: "big/lovely big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/lovely big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>تناغم الرقة والدفء في زجاجة واحدة.</strong><br>
         يجمع Lovely Body Mist من Beautiforia بين عبير الزهور الفوّاحة ودفء الأخشاب الناعمة، ليمنحكِ تجربة عطرية متوازنة تجمع بين الأنوثة والأناقة، مستوحى من عطر You’re The One من Bath & Body Works.<br><br>
         <strong>لماذا تختارين Lovely؟</strong><br>
@@ -124,23 +100,11 @@ const products = [
         • <strong>ترطيب وتغذية للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لمنح البشرة نعومة وانتعاشًا يدومان.<br>
         • <strong>ثبات وانتشار أنيق:</strong> رائحة فواحة تدوم لساعات بحضور أنثوي واضح بدون مبالغة.`
     },
-    {
-        id: 9, name: "Lovly - Full Set", nameAr: "لافلي - الطقم الكامل",
-        price: 300, image: "images/lovely.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>تناغم الرقة والدفء في زجاجة واحدة.</strong><br>
-        يجمع Lovely Body Mist من Beautiforia بين عبير الزهور الفوّاحة ودفء الأخشاب الناعمة، ليمنحكِ تجربة عطرية متوازنة تجمع بين الأنوثة والأناقة، مستوحى من عطر You’re The One من Bath & Body Works.<br><br>
-        <strong>لماذا تختارين Lovely؟</strong><br>
-        • <strong>تركيبة زهرية خشبية (Floral – Woody):</strong> مزيج متناغم يجمع بين نعومة الورد ودفء الأخشاب لرائحة أنثوية راقية ومريحة.<br>
-        • <strong>مكونات عطرية فاخرة:</strong> خشب البتولا الأبيض، الورد المخملي، ونكتار الفراولة المركز لإحساس ناعم بدفء حلو وأناقة واضحة.<br>
-        • <strong>ترطيب وتغذية للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لمنح البشرة نعومة وانتعاشًا يدومان.<br>
-        • <strong>ثبات وانتشار أنيق:</strong> رائحة فواحة تدوم لساعات بحضور أنثوي واضح بدون مبالغة.<br><br>
-        <em>الطقم الكامل بسعر مميز.</em>`
-    },
 
     // --- 4. COCONUT ---
     {
         id: 10, name: "Coconut - 125ml", nameAr: "جوز الهند - عبوة صغيرة",
-        price: 150, image: "small/coconut  small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/coconut  small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>انتعاش استوائي يغمر حواسكِ بنعومة لا تُقاوم.</strong><br>
         استمتعي بإحساس الشواطئ الدافئة مع Coconut Body Mist من Beautiforia. ميست يجمع بين الانتعاش والحلاوة في توليفة ناعمة تمنحكِ راحة، حيوية، ولمسة صيفية مميزة طوال اليوم.<br><br>
         <strong>لماذا ستحبين Coconut Body Mist؟</strong><br>
@@ -151,7 +115,7 @@ const products = [
     },
     {
         id: 11, name: "Coconut - 225ml", nameAr: "جوز الهند - عبوة كبيرة",
-        price: 225, image: "big/coconut big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/coconut big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>انتعاش استوائي يغمر حواسكِ بنعومة لا تُقاوم.</strong><br>
         استمتعي بإحساس الشواطئ الدافئة مع Coconut Body Mist من Beautiforia. ميست يجمع بين الانتعاش والحلاوة في توليفة ناعمة تمنحكِ راحة، حيوية، ولمسة صيفية مميزة طوال اليوم.<br><br>
         <strong>لماذا ستحبين Coconut Body Mist؟</strong><br>
@@ -160,23 +124,11 @@ const products = [
         • <strong>ثبات وانتعاش يدومان:</strong> رائحة واضحة ومنعشة لساعات بدون ثِقل.<br>
         • <strong>ترطيب وعناية بالبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لمنح البشرة نعومة ولمسة حريرية.`
     },
-    {
-        id: 12, name: "Coconut - Full Set", nameAr: "جوز الهند - الطقم الكامل",
-        price: 300, image: "images/coconut.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>انتعاش استوائي يغمر حواسكِ بنعومة لا تُقاوم.</strong><br>
-        استمتعي بإحساس الشواطئ الدافئة مع Coconut Body Mist من Beautiforia. ميست يجمع بين الانتعاش والحلاوة في توليفة ناعمة تمنحكِ راحة، حيوية، ولمسة صيفية مميزة طوال اليوم.<br><br>
-        <strong>لماذا ستحبين Coconut Body Mist؟</strong><br>
-        • <strong>مزيج فريش سكري (Fresh – Sugary):</strong> رائحة مرِحة تجمع بين انتعاش الفواكه وحلاوة اللمسات السكرية لإحساس صيفي خفيف ومبهج.<br>
-        • <strong>مكونات عطرية غنية:</strong> جوز الهند والفانيليا مع لمسات ناعمة من الخوخ لرائحة أنثوية دافئة ومريحة.<br>
-        • <strong>ثبات وانتعاش يدومان:</strong> رائحة واضحة ومنعشة لساعات بدون ثِقل.<br>
-        • <strong>ترطيب وعناية بالبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لمنح البشرة نعومة ولمسة حريرية.<br><br>
-        <em>عرض خاص (عبوتين).</em>`
-    },
 
     // --- 5. SO SEXY ---
     {
         id: 13, name: "So Sexy - 125ml", nameAr: "سو سيكسي - عبوة صغيرة",
-        price: 150, image: "small/so sexy small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/so sexy small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>سر الجاذبية الشرقية… والأنوثة الطاغية.</strong><br>
         للباحثات عن التألق والحضور القوي، يأتي So Sexy Body Mist من Beautiforia برائحة شرقية دافئة مليئة بالإغراء، ميست صُمم ليبرز أنوثتكِ بثقة ويمنحكِ هالة جذابة لا تُنسى في المناسبات الخاصة، مستوحى من عطر Baccarat Rouge.<br><br>
         <strong>لماذا تختارين So Sexy؟</strong><br>
@@ -188,7 +140,7 @@ const products = [
     },
     {
         id: 14, name: "So Sexy - 225ml", nameAr: "سو سيكسي - عبوة كبيرة",
-        price: 225, image: "big/so sexy big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/so sexy big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>سر الجاذبية الشرقية… والأنوثة الطاغية.</strong><br>
         للباحثات عن التألق والحضور القوي، يأتي So Sexy Body Mist من Beautiforia برائحة شرقية دافئة مليئة بالإغراء، ميست صُمم ليبرز أنوثتكِ بثقة ويمنحكِ هالة جذابة لا تُنسى في المناسبات الخاصة، مستوحى من عطر Baccarat Rouge.<br><br>
         <strong>لماذا تختارين So Sexy؟</strong><br>
@@ -198,24 +150,11 @@ const products = [
         • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C للحفاظ على نعومة البشرة وانتعاشها.<br>
         • <strong>ثبات وانتشار قوي:</strong> رائحة فوّاحة تدوم لساعات بحضور أنثوي واضح.`
     },
-    {
-        id: 15, name: "So Sexy - Full Set", nameAr: "سو سيكسي - الطقم الكامل",
-        price: 300, image: "images/so sexy.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>سر الجاذبية الشرقية… والأنوثة الطاغية.</strong><br>
-        للباحثات عن التألق والحضور القوي، يأتي So Sexy Body Mist من Beautiforia برائحة شرقية دافئة مليئة بالإغراء، ميست صُمم ليبرز أنوثتكِ بثقة ويمنحكِ هالة جذابة لا تُنسى في المناسبات الخاصة، مستوحى من عطر Baccarat Rouge.<br><br>
-        <strong>لماذا تختارين So Sexy؟</strong><br>
-        • <strong>إحساس عطري شوجري شرقي (Sugary – Oriental):</strong> توليفة غنية تمنحكِ حضورًا قويًا، دافئًا، ومليئًا بالجاذبية.<br>
-        • <strong>مكونات فاخرة وعميقة:</strong> مزيج جذاب من السكر، الزعفران، والياسمين، مع قاعدة دافئة من خشب العنبر وخشب الأرز لعمق وثبات واضحين.<br>
-        • <strong>أنوثة وسحر شرقي:</strong> توازن مثالي بين النعومة والجرأة بطابع فاخر ولافت.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C للحفاظ على نعومة البشرة وانتعاشها.<br>
-        • <strong>ثبات وانتشار قوي:</strong> رائحة فوّاحة تدوم لساعات بحضور أنثوي واضح.<br><br>
-        <em>الطقم الكامل.</em>`
-    },
 
     // --- 6. RED NIGHT ---
     {
         id: 16, name: "Red Night - 125ml", nameAr: "ريد نايت - عبوة صغيرة",
-        price: 150, image: "small/red night small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/red night small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>غموض الليل… وسحر الشرق في زجاجة.</strong><br>
         Red Night Body Mist من Beautiforia هو اختياركِ للأمسيات المميزة؛ حيث تمتزج الفواكه الداكنة مع عمق البخور الشرقي في رائحة أنثوية جريئة مليئة بالغموض والأناقة، مستوحى من عطر Dark Kiss من Bath & Body Works.<br>
         عطر صُمم ليترك أثرًا لا يُنسى ويمنحكِ حضورًا لافتًا مع كل رشّة.<br><br>
@@ -228,7 +167,7 @@ const products = [
     },
     {
         id: 17, name: "Red Night - 225ml", nameAr: "ريد نايت - عبوة كبيرة",
-        price: 225, image: "big/red night big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/red night big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>غموض الليل… وسحر الشرق في زجاجة.</strong><br>
         Red Night Body Mist من Beautiforia هو اختياركِ للأمسيات المميزة؛ حيث تمتزج الفواكه الداكنة مع عمق البخور الشرقي في رائحة أنثوية جريئة مليئة بالغموض والأناقة، مستوحى من عطر Dark Kiss من Bath & Body Works.<br>
         عطر صُمم ليترك أثرًا لا يُنسى ويمنحكِ حضورًا لافتًا مع كل رشّة.<br><br>
@@ -239,25 +178,11 @@ const products = [
         • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وانتعاش يدومان.<br>
         • <strong>ثبات وانتشار قوي:</strong> رائحة فوّاحة تدوم لساعات وتناسب الأجواء الليلية.`
     },
-    {
-        id: 18, name: "Red Night - Full Set", nameAr: "ريد نايت - الطقم الكامل",
-        price: 300, image: "images/red  night.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>غموض الليل… وسحر الشرق في زجاجة.</strong><br>
-        Red Night Body Mist من Beautiforia هو اختياركِ للأمسيات المميزة؛ حيث تمتزج الفواكه الداكنة مع عمق البخور الشرقي في رائحة أنثوية جريئة مليئة بالغموض والأناقة، مستوحى من عطر Dark Kiss من Bath & Body Works.<br>
-        عطر صُمم ليترك أثرًا لا يُنسى ويمنحكِ حضورًا لافتًا مع كل رشّة.<br><br>
-        <strong>لماذا تختارين Red Night؟</strong><br>
-        • <strong>عائلة عطرية زهري شرقي (Floral – Oriental):</strong> توليفة دافئة وعميقة تجمع بين الرقة والجرأة في توازن مثالي.<br>
-        • <strong>مكونات عطرية غنية:</strong> التوت والبرقوق مع البخور الأسود، ولمسات منعشة من البرغموت، وقاعدة ناعمة من المسك لعمق وثبات واضحين.<br>
-        • <strong>إحساس أنثوي غامض:</strong> مزيج يوازن بين الروح الشرقية الأصيلة واللمسات الأنثوية العصرية.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وانتعاش يدومان.<br>
-        • <strong>ثبات وانتشار قوي:</strong> رائحة فوّاحة تدوم لساعات وتناسب الأجواء الليلية.<br><br>
-        <em>العرض الأوفر.</em>`
-    },
 
     // --- 7. BUBBLY STARS ---
     {
         id: 19, name: "Bubbly Stars - 125ml", nameAr: "بوبلي ستارز - عبوة صغيرة",
-        price: 150, image: "small/bubbly small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/bubbly small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>فخامة ناعمة… ولمعان أنثوي يدوم.</strong><br>
         استمتعي بتجربة عطرية تجمع بين الدفء الشرقي ورقّة الأنوثة مع Bubbly Stars Body Mist من Beautiforia. بودي ميست صُمم ليمنحكِ إحساسًا فاخرًا وحضورًا أنثويًا مميزًا، بتركيبة غنية تعتني ببشرتك وترافقك طوال اليوم، مستوحى من عطر In The Stars من Bath & Body Works.<br><br>
         <strong>العائلة العطرية:</strong> شوجري – خشبي (Sugary – Woody)<br><br>
@@ -270,7 +195,7 @@ const products = [
     },
     {
         id: 20, name: "Bubbly Stars - 225ml", nameAr: "بوبلي ستارز - عبوة كبيرة",
-        price: 225, image: "big/bubbly big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/bubbly big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>فخامة ناعمة… ولمعان أنثوي يدوم.</strong><br>
         استمتعي بتجربة عطرية تجمع بين الدفء الشرقي ورقّة الأنوثة مع Bubbly Stars Body Mist من Beautiforia. بودي ميست صُمم ليمنحكِ إحساسًا فاخرًا وحضورًا أنثويًا مميزًا، بتركيبة غنية تعتني ببشرتك وترافقك طوال اليوم، مستوحى من عطر In The Stars من Bath & Body Works.<br><br>
         <strong>العائلة العطرية:</strong> شوجري – خشبي (Sugary – Woody)<br><br>
@@ -281,25 +206,11 @@ const products = [
         • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لتغذية البشرة ومنحها ملمسًا ناعمًا ومشرقًا.<br>
         • <strong>مزيج أنثوي فاخر:</strong> توازن مثالي بين الطابع الشرقي الأصيل واللمسات العصرية الراقية.`
     },
-    {
-        id: 21, name: "Bubbly Stars - Full Set", nameAr: "بوبلي ستارز - الطقم الكامل",
-        price: 300, image: "images/bubbly splash.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>فخامة ناعمة… ولمعان أنثوي يدوم.</strong><br>
-        استمتعي بتجربة عطرية تجمع بين الدفء الشرقي ورقّة الأنوثة مع Bubbly Stars Body Mist من Beautiforia. بودي ميست صُمم ليمنحكِ إحساسًا فاخرًا وحضورًا أنثويًا مميزًا، بتركيبة غنية تعتني ببشرتك وترافقك طوال اليوم، مستوحى من عطر In The Stars من Bath & Body Works.<br><br>
-        <strong>العائلة العطرية:</strong> شوجري – خشبي (Sugary – Woody)<br><br>
-        <strong>المكونات العطرية:</strong><br>
-        مزيج متناغم من العنبر والسكر مع لمسات فاخرة من العود الأبيض، وقاعدة دافئة من خشب الصندل والمسك تمنح الرائحة عمقًا وثباتًا راقيًا.<br><br>
-        <strong>لماذا ستحبين Bubbly Stars؟</strong><br>
-        • <strong>رائحة تدوم طويلاً:</strong> هالة أنثوية جذابة لساعات بدون ثِقل.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لتغذية البشرة ومنحها ملمسًا ناعمًا ومشرقًا.<br>
-        • <strong>مزيج أنثوي فاخر:</strong> توازن مثالي بين الطابع الشرقي الأصيل واللمسات العصرية الراقية.<br><br>
-        <em>الطقم الكامل.</em>`
-    },
 
     // --- 8. BONBON ---
     {
         id: 22, name: "Bonbon - 125ml", nameAr: "بونبون - عبوة صغيرة",
-        price: 150, image: "small/bonbon small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/bonbon small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>عبير يجمع بين الرقة والانتعاش.</strong><br>
         استمتعي بتجربة عطرية أنثوية مرِحة مع Bonbon Body Mist من Beautiforia، توليفة تمنح جسمكِ لمسة من الحيوية والدفء في آنٍ واحد. ميست صُمم ليمنحكِ إحساسًا بالنظافة والجاذبية يدوم طوال اليوم، مستوحى من الإحساس الأنثوي الفاكهي السكري لعطر So Sexy من Victoria’s Secret.<br><br>
         <strong>لماذا ستحبين Bonbon؟</strong><br>
@@ -310,7 +221,7 @@ const products = [
     },
     {
         id: 23, name: "Bonbon - 225ml", nameAr: "بونبون - عبوة كبيرة",
-        price: 225, image: "big/bonbon big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/bonbon big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>عبير يجمع بين الرقة والانتعاش.</strong><br>
         استمتعي بتجربة عطرية أنثوية مرِحة مع Bonbon Body Mist من Beautiforia، توليفة تمنح جسمكِ لمسة من الحيوية والدفء في آنٍ واحد. ميست صُمم ليمنحكِ إحساسًا بالنظافة والجاذبية يدوم طوال اليوم، مستوحى من الإحساس الأنثوي الفاكهي السكري لعطر So Sexy من Victoria’s Secret.<br><br>
         <strong>لماذا ستحبين Bonbon؟</strong><br>
@@ -319,23 +230,11 @@ const products = [
         • <strong>ترطيب وعناية للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C للحفاظ على نعومة البشرة ونضارتها مع كل رشّة.<br>
         • <strong>ثبات وانتشار طويل:</strong> رائحة فوّاحة تدوم لساعات بدون مبالغة.`
     },
-    {
-        id: 24, name: "Bonbon - Full Set", nameAr: "بونبون - الطقم الكامل",
-        price: 300, image: "images/bonbon.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>عبير يجمع بين الرقة والانتعاش.</strong><br>
-        استمتعي بتجربة عطرية أنثوية مرِحة مع Bonbon Body Mist من Beautiforia، توليفة تمنح جسمكِ لمسة من الحيوية والدفء في آنٍ واحد. ميست صُمم ليمنحكِ إحساسًا بالنظافة والجاذبية يدوم طوال اليوم، مستوحى من الإحساس الأنثوي الفاكهي السكري لعطر So Sexy من Victoria’s Secret.<br><br>
-        <strong>لماذا ستحبين Bonbon؟</strong><br>
-        • <strong>مزيج عطري مبتكر (Sugary – Fruity):</strong> توليفة متوازنة تجمع بين الحلاوة السكرية وانتعاش الفواكه لإطلالة أنثوية مشرقة ومرِحة.<br>
-        • <strong>مكونات غنية وفاخرة:</strong> الكراميل، البرتقال، الخوخ، مع لمسة دافئة خفيفة تمنح الرائحة نعومة وثباتًا جذابًا بدون ثِقل.<br>
-        • <strong>ترطيب وعناية للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C للحفاظ على نعومة البشرة ونضارتها مع كل رشّة.<br>
-        • <strong>ثبات وانتشار طويل:</strong> رائحة فوّاحة تدوم لساعات بدون مبالغة.<br><br>
-        <em>الطقم الكامل.</em>`
-    },
 
     // --- 9. STRAWBERRY & CREAM ---
     {
         id: 25, name: "Strawberry - 125ml", nameAr: "فراولة - عبوة صغيرة",
-        price: 150, image: "small/strawyberry small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/strawyberry small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>حلاوة شهية… وانتعاش يذوب في الحواس.</strong><br>
         استمتعي بتجربة عطرية مرِحة مليئة بالبهجة مع Strawberry & Cream Body Mist من Beautiforia. بودي ميست صُمم ليمنحكِ إحساسًا بالحلاوة والنعومة، ويغلف بشرتكِ بعبير يشبه عالم الحلويات الفاخرة، مستوحى من عطر Strawberry Pound Cake من Bath & Body Works.<br><br>
         <strong>الهرم العطري (Scent Profile):</strong><br>
@@ -348,7 +247,7 @@ const products = [
     },
     {
         id: 26, name: "Strawberry - 225ml", nameAr: "فراولة - عبوة كبيرة",
-        price: 225, image: "big/straw berry big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/straw berry big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>حلاوة شهية… وانتعاش يذوب في الحواس.</strong><br>
         استمتعي بتجربة عطرية مرِحة مليئة بالبهجة مع Strawberry & Cream Body Mist من Beautiforia. بودي ميست صُمم ليمنحكِ إحساسًا بالحلاوة والنعومة، ويغلف بشرتكِ بعبير يشبه عالم الحلويات الفاخرة، مستوحى من عطر Strawberry Pound Cake من Bath & Body Works.<br><br>
         <strong>الهرم العطري (Scent Profile):</strong><br>
@@ -359,25 +258,11 @@ const products = [
         • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لمنح البشرة نعومة وانتعاشًا.<br>
         • <strong>إحساس حلوي فاخر:</strong> يجمع بين البراءة والأنوثة بطابع دافئ ومريح.`
     },
-    {
-        id: 27, name: "Strawberry - Full Set", nameAr: "فراولة - الطقم الكامل",
-        price: 300, image: "images/strawberry.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>حلاوة شهية… وانتعاش يذوب في الحواس.</strong><br>
-        استمتعي بتجربة عطرية مرِحة مليئة بالبهجة مع Strawberry & Cream Body Mist من Beautiforia. بودي ميست صُمم ليمنحكِ إحساسًا بالحلاوة والنعومة، ويغلف بشرتكِ بعبير يشبه عالم الحلويات الفاخرة، مستوحى من عطر Strawberry Pound Cake من Bath & Body Works.<br><br>
-        <strong>الهرم العطري (Scent Profile):</strong><br>
-        • <strong>العائلة العطرية:</strong> شوجري – فاكهي (Sugary – Fruity)<br>
-        • <strong>المكونات العطرية:</strong> مزيج شهي من الفراولة الطازجة، الكريمة الغنية، ولمسة دافئة من رائحة الكب كيك تمنح العطر إحساسًا ناعمًا ومبهجًا يدوم.<br><br>
-        <strong>لماذا ستحبين Strawberry & Cream؟</strong><br>
-        • <strong>رائحة تدوم طويلاً:</strong> توليفة حلوة تحيطكِ بإحساس أنثوي مرِح لساعات.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لمنح البشرة نعومة وانتعاشًا.<br>
-        • <strong>إحساس حلوي فاخر:</strong> يجمع بين البراءة والأنوثة بطابع دافئ ومريح.<br><br>
-        <em>الطقم الكامل.</em>`
-    },
 
     // --- 10. JOYFUL ---
     {
         id: 28, name: "Joyful - 125ml", nameAr: "جوي فول - عبوة صغيرة",
-        price: 150, image: "small/joyful small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/joyful small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>انتعاش الزهور… ولمسة فاكهية مشرقة تدوم.</strong><br>
         استمتعي بتجربة عطرية ناعمة ومنعشة مع Joyful Body Mist من Beautiforia، توليفة تمنحكِ إحساسًا بالحيوية والراحة طوال اليوم. بودي ميست صُمم ليعكس أنوثة هادئة وإشراقة طبيعية، بتركيبة خفيفة ومنعشة، مستوحى من عطر Very Sexy Now من Victoria’s Secret.<br><br>
         <strong>العائلة العطرية:</strong> زهري – فاكهي (Floral – Fruity)<br><br>
@@ -390,7 +275,7 @@ const products = [
     },
     {
         id: 29, name: "Joyful - 225ml", nameAr: "جوي فول - عبوة كبيرة",
-        price: 225, image: "big/joyful big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/joyful big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>انتعاش الزهور… ولمسة فاكهية مشرقة تدوم.</strong><br>
         استمتعي بتجربة عطرية ناعمة ومنعشة مع Joyful Body Mist من Beautiforia، توليفة تمنحكِ إحساسًا بالحيوية والراحة طوال اليوم. بودي ميست صُمم ليعكس أنوثة هادئة وإشراقة طبيعية، بتركيبة خفيفة ومنعشة، مستوحى من عطر Very Sexy Now من Victoria’s Secret.<br><br>
         <strong>العائلة العطرية:</strong> زهري – فاكهي (Floral – Fruity)<br><br>
@@ -401,25 +286,11 @@ const products = [
         • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وانتعاش يدومان.<br>
         • <strong>أنوثة طبيعية هادئة:</strong> مزيج متوازن يناسب الاستخدام اليومي والأجواء الدافئة.`
     },
-    {
-        id: 30, name: "Joyful - Full Set", nameAr: "جوي فول - الطقم الكامل",
-        price: 300, image: "images/joyful.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>انتعاش الزهور… ولمسة فاكهية مشرقة تدوم.</strong><br>
-        استمتعي بتجربة عطرية ناعمة ومنعشة مع Joyful Body Mist من Beautiforia، توليفة تمنحكِ إحساسًا بالحيوية والراحة طوال اليوم. بودي ميست صُمم ليعكس أنوثة هادئة وإشراقة طبيعية، بتركيبة خفيفة ومنعشة، مستوحى من عطر Very Sexy Now من Victoria’s Secret.<br><br>
-        <strong>العائلة العطرية:</strong> زهري – فاكهي (Floral – Fruity)<br><br>
-        <strong>المكونات العطرية:</strong><br>
-        جوز الهند مع لمسات ناعمة من المسك الأبيض وزهرة اللوتس الأبيض تمنح الرائحة إحساسًا راقيًا ومنعشًا بطابع صيفي خفيف.<br><br>
-        <strong>لماذا ستحبين Joyful؟</strong><br>
-        • <strong>رائحة منعشة تدوم:</strong> إحساس نظيف ومشرق يرافقكِ لساعات.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وانتعاش يدومان.<br>
-        • <strong>أنوثة طبيعية هادئة:</strong> مزيج متوازن يناسب الاستخدام اليومي والأجواء الدافئة.<br><br>
-        <em>الطقم الكامل.</em>`
-    },
 
     // --- 11. DREAMS ---
     {
         id: 31, name: "Dreams - 125ml", nameAr: "دريمز - عبوة صغيرة",
-        price: 150, image: "small/dream small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/dream small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>أنوثة حالمة… ولمسة سكرية دافئة تأسر الحواس.</strong><br>
         انغمسي في تجربة عطرية ناعمة مع Dreams Body Mist من Beautiforia، توليفة تجمع بين الرقة والجاذبية وتمنحكِ إحساسًا دافئًا ومريحًا طوال اليوم. مستوحى من الطابع العطري لعطر Burberry Her مع لمسة فانيليا دافئة.<br><br>
         <strong>العائلة العطرية:</strong> زهري – سكّري (Floral – Sugary)<br><br>
@@ -432,7 +303,7 @@ const products = [
     },
     {
         id: 32, name: "Dreams - 225ml", nameAr: "دريمز - عبوة كبيرة",
-        price: 225, image: "big/dream big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/dream big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>أنوثة حالمة… ولمسة سكرية دافئة تأسر الحواس.</strong><br>
         انغمسي في تجربة عطرية ناعمة مع Dreams Body Mist من Beautiforia، توليفة تجمع بين الرقة والجاذبية وتمنحكِ إحساسًا دافئًا ومريحًا طوال اليوم. مستوحى من الطابع العطري لعطر Burberry Her مع لمسة فانيليا دافئة.<br><br>
         <strong>العائلة العطرية:</strong> زهري – سكّري (Floral – Sugary)<br><br>
@@ -443,25 +314,11 @@ const products = [
         • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وانتعاش يدومان.<br>
         • <strong>إحساس أنثوي حالم:</strong> مزيج يجمع بين نعومة الزهور وحلاوة الفانيليا بثقة وأناقة.`
     },
-    {
-        id: 33, name: "Dreams - Full Set", nameAr: "دريمز - الطقم الكامل",
-        price: 300, image: "images/dreams both.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>أنوثة حالمة… ولمسة سكرية دافئة تأسر الحواس.</strong><br>
-        انغمسي في تجربة عطرية ناعمة مع Dreams Body Mist من Beautiforia، توليفة تجمع بين الرقة والجاذبية وتمنحكِ إحساسًا دافئًا ومريحًا طوال اليوم. مستوحى من الطابع العطري لعطر Burberry Her مع لمسة فانيليا دافئة.<br><br>
-        <strong>العائلة العطرية:</strong> زهري – سكّري (Floral – Sugary)<br><br>
-        <strong>المكونات العطرية:</strong><br>
-        الفانيليا الدافئة، الباتشولي، البنفسج، الياسمين، مع قاعدة غنية من العنبر تمنح الرائحة عمقًا وأنوثة حالمة تدوم.<br><br>
-        <strong>لماذا ستحبين Dreams؟</strong><br>
-        • <strong>رائحة تدوم طويلاً:</strong> عبير ناعم وفوّاح يرافقكِ لساعات.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وانتعاش يدومان.<br>
-        • <strong>إحساس أنثوي حالم:</strong> مزيج يجمع بين نعومة الزهور وحلاوة الفانيليا بثقة وأناقة.<br><br>
-        <em>الطقم الكامل.</em>`
-    },
 
     // --- 12. VELVET BLUSH ---
     {
         id: 34, name: "Velvet Blush - 125ml", nameAr: "فيلفيت بلاش - عبوة صغيرة",
-        price: 150, image: "small/velvet small.png", category: "Body Mist", volume: "125 ml",
+        oldPrice: 160, price: 100, image: "small/velvet small.png", category: "Body Mist", volume: "125 ml",
         desc: `<strong>أنوثة ناعمة… وانتعاش فاكهي يفيض ثقة.</strong><br>
         Velvet Blush Body Mist من Beautiforia، توليفة تجمع بين سحر الفواكه ورقّة الزهور لتمنحكِ إحساسًا بالأناقة والانتعاش طوال اليوم. مستوحى من عطر Pure Seduction من Victoria’s Secret.<br><br>
         <strong>العائلة العطرية:</strong> سكّري – فاكهي (Sugary – Fruity)<br><br>
@@ -474,7 +331,7 @@ const products = [
     },
     {
         id: 35, name: "Velvet Blush - 225ml", nameAr: "فيلفيت بلاش - عبوة كبيرة",
-        price: 225, image: "big/velvet big.png", category: "Body Mist", volume: "225 ml",
+        oldPrice: 220, price: 165, image: "big/velvet big.png", category: "Body Mist", volume: "225 ml",
         desc: `<strong>أنوثة ناعمة… وانتعاش فاكهي يفيض ثقة.</strong><br>
         Velvet Blush Body Mist من Beautiforia، توليفة تجمع بين سحر الفواكه ورقّة الزهور لتمنحكِ إحساسًا بالأناقة والانتعاش طوال اليوم. مستوحى من عطر Pure Seduction من Victoria’s Secret.<br><br>
         <strong>العائلة العطرية:</strong> سكّري – فاكهي (Sugary – Fruity)<br><br>
@@ -485,27 +342,14 @@ const products = [
         • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وإشراقة تدومان.<br>
         • <strong>إحساس أنثوي منعش:</strong> مزيج مرِح يجمع بين الحلاوة والانتعاش بثقة وأناقة.`
     },
-    {
-        id: 36, name: "Velvet Blush - Full Set", nameAr: "فيلفيت بلاش - الطقم الكامل",
-        price: 300, image: "images/velvet blush.jpg", category: "Body Mist", volume: "125ml + 225ml",
-        desc: `<strong>أنوثة ناعمة… وانتعاش فاكهي يفيض ثقة.</strong><br>
-        Velvet Blush Body Mist من Beautiforia، توليفة تجمع بين سحر الفواكه ورقّة الزهور لتمنحكِ إحساسًا بالأناقة والانتعاش طوال اليوم. مستوحى من عطر Pure Seduction من Victoria’s Secret.<br><br>
-        <strong>العائلة العطرية:</strong> سكّري – فاكهي (Sugary – Fruity)<br><br>
-        <strong>المكونات العطرية:</strong><br>
-        البرقوق العصيري، الفريزيا الناعمة، ولمسات مهدئة من الكاموميل تمنح الرائحة توازنًا أنثويًا منعشًا وحضورًا جذابًا.<br><br>
-        <strong>لماذا ستحبين Velvet Blush؟</strong><br>
-        • <strong>رائحة تدوم طويلاً:</strong> عبير فواحي يرافقكِ لساعات.<br>
-        • <strong>عناية وترطيب للبشرة:</strong> مدعّم بالألوفيرا وفيتامين C لنعومة وإشراقة تدومان.<br>
-        • <strong>إحساس أنثوي منعش:</strong> مزيج مرِح يجمع بين الحلاوة والانتعاش بثقة وأناقة.<br><br>
-        <em>الطقم الكامل.</em>`
-    },
     
-    // --- 13. SKINCARE ---
+    // --- 13. SKINCARE (25% OFF) ---
     { 
         id: 37, 
         name: "Foaming Cleanser", 
         nameAr: "غسول رغوي", 
-        price: 350, 
+        oldPrice: 350,
+        price: 262.5, 
         image: "images/foaming.jpeg", 
         category: "Skincare", 
         volume: "150 ml", 
@@ -520,7 +364,8 @@ const products = [
         id: 38, 
         name: "Beautiforia Sun Gel SPF 50+", 
         nameAr: "صن جل بيوتيفوريا", 
-        price: 200, 
+        oldPrice: 200,
+        price: 150, 
         image: "images/sunscreen.jpeg", 
         category: "Skincare", 
         volume: "50 ml", 
@@ -536,7 +381,8 @@ const products = [
         id: 39, 
         name: "Collagen Moisturising Cream", 
         nameAr: "كريم الترطيب بالكولاجين", 
-        price: 250, 
+        oldPrice: 250,
+        price: 187.5, 
         image: "images/col.jpeg", 
         category: "Skincare", 
         volume: "100 ml", 
@@ -549,12 +395,13 @@ const products = [
         • <strong>مناسب للاستخدام اليومي:</strong> تركيبته لطيفة ومناسبة لروتين العناية الصباحي والمسائي.` 
     },
 
-    // --- 14. DEODORANTS ---
+    // --- 14. DEODORANTS (25% OFF) ---
     { 
         id: 40, 
         name: "Beautiforia Roll-on", 
         nameAr: "رول-أون بيوتيفوريا", 
-        price: 150, 
+        oldPrice: 150,
+        price: 112.5, 
         image: "images/roll.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
@@ -570,7 +417,8 @@ const products = [
         id: 41, 
         name: "Whitening Roll-on (Black)", 
         nameAr: "رول أون التفتيح الأسود", 
-        price: 150, 
+        oldPrice: 150,
+        price: 112.5, 
         image: "images/roll black.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
@@ -586,7 +434,8 @@ const products = [
         id: 42, 
         name: "Violet Rose Whitening Deo", 
         nameAr: "مزيل عرق فيوليت روز المفتح", 
-        price: 150, 
+        oldPrice: 150,
+        price: 112.5, 
         image: "images/roll white.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
@@ -602,7 +451,8 @@ const products = [
         id: 43, 
         name: "Black Night Whitening Deo (Men)", 
         nameAr: "بلاك نايت رول-أون المفتح للرجال", 
-        price: 150, 
+        oldPrice: 150,
+        price: 112.5, 
         image: "images/roll men.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
@@ -618,7 +468,8 @@ const products = [
         id: 44, 
         name: "Oud Sauvage Whitening Deo", 
         nameAr: "مزيل عرق عود سوفاج المفتح", 
-        price: 150, 
+        oldPrice: 150,
+        price: 112.5, 
         image: "images/roll purple.jpeg", 
         category: "Deodorant", 
         volume: "50 ml", 
@@ -633,7 +484,8 @@ const products = [
         id: 45, 
         name: "Night Kiss Whitening Deo", 
         nameAr: "نايت كيس رول-أون المفتح", 
-        price: 150, 
+        oldPrice: 150,
+        price: 112.5, 
         image: "images/night kiss.jpeg",
         category: "Deodorant",
         volume: "50 ml", 
@@ -656,15 +508,24 @@ const isHomePage = document.body.classList.contains('home-page');
 
 if (productGrid) {
     if (isHomePage) {
-        // --- UPDATED LOGIC FOR BEST SELLERS ---
-        // 1. Filter only "Full Set" products
-        const fullSets = products.filter(p => p.name.includes("Full Set"));
+        // --- UPDATED LOGIC FOR BEST SELLERS (MIXED CATEGORIES) ---
+        // 1. Pick 1 random Skincare item
+        const randomSkincare = products.filter(p => p.category === "Skincare").sort(() => 0.5 - Math.random()).slice(0, 1);
         
-        // 2. Randomize them (shuffle the array)
-        const randomFour = fullSets.sort(() => 0.5 - Math.random()).slice(0, 4);
+        // 2. Pick 1 random Deodorant
+        const randomDeodorant = products.filter(p => p.category === "Deodorant").sort(() => 0.5 - Math.random()).slice(0, 1);
         
-        // 3. Render the random 4
-        renderProducts(randomFour, productGrid); 
+        // 3. Pick 2 random Body Mists
+        const randomBodyMists = products.filter(p => p.category === "Body Mist").sort(() => 0.5 - Math.random()).slice(0, 2);
+        
+        // 4. Combine them all into one list
+        let mixedBestSellers = [...randomSkincare, ...randomDeodorant, ...randomBodyMists];
+        
+        // 5. Shuffle the final list so they show up in a random order every time
+        mixedBestSellers = mixedBestSellers.sort(() => 0.5 - Math.random());
+        
+        // Render the mixed list
+        renderProducts(mixedBestSellers, productGrid); 
     } else {
         const categories = [...new Set(products.map(p => p.category))];
         categories.forEach(cat => {
@@ -684,13 +545,16 @@ if (productGrid) {
         productGrid.className = ''; 
     }
 }
-
 function renderProducts(items, container) {
     items.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
         
-        const priceDisplay = `EGP ${product.price}`;
+        // Dynamic Price Display Logic
+        const priceDisplay = product.oldPrice 
+            ? `<span style="text-decoration: line-through; color: #999; margin-right: 8px; font-size: 0.9em;">EGP ${product.oldPrice}</span><span style="color: #b12704; font-weight: bold;">EGP ${product.price}</span>`
+            : `<span style="color: #b12704; font-weight: bold;">EGP ${product.price}</span>`;
+            
         const buttonHtml = `<button class="btn" onclick="addToCart(${product.id})">Add to Cart</button>`;
 
         card.innerHTML = `
@@ -727,6 +591,11 @@ if (detailContainer) {
         }
 
         const buttonHtml = `<button class="btn" style="width:100%; max-width:300px; padding:15px;" onclick="addToCart(${product.id})">Add to Cart</button>`;
+        
+        // Dynamic Price Display Logic for Details Page
+        const priceDisplayHtml = product.oldPrice 
+            ? `<span style="text-decoration: line-through; color: #999; margin-right: 15px; font-size: 1.2rem;">EGP ${product.oldPrice}</span><span id="price-display" style="font-size:1.8rem; color:#b12704; font-weight:bold;">EGP ${product.price}</span>`
+            : `<span id="price-display" style="font-size:1.8rem; color:#b12704; font-weight:bold;">EGP ${product.price}</span>`;
 
         detailContainer.innerHTML = `
             <div class="detail-image"><img src="${product.image}" alt="${product.name}"></div>
@@ -734,7 +603,7 @@ if (detailContainer) {
                 <h1>${product.name}</h1>
                 <h2 style="color:#666; margin-bottom:10px;">${product.nameAr}</h2>
                 <div style="border-bottom:1px solid #ddd; padding-bottom:15px; margin-bottom:15px;">
-                    <span id="price-display" style="font-size:1.8rem; color:#b12704; font-weight:bold;">EGP ${product.price}</span>
+                    ${priceDisplayHtml}
                     <br><span style="color:#007600; font-weight:bold;">In Stock</span>
                 </div>
                 <div style="background:#f3f3f3; padding:15px; border-radius:5px; margin-bottom:20px;">

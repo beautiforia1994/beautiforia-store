@@ -264,3 +264,34 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 4
 .stars { color: #FFD700; margin-bottom: 15px; font-size: 1.2rem; }
 .review-text { font-style: italic; color: #555; margin-bottom: 15px; line-height: 1.6; }
 .reviewer-name { font-weight: bold; font-size: 0.95rem; color: #000; }
+
+/* Mobile View: 2 Products Side-by-Side */
+@media (max-width: 768px) {
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Forces 2 columns */
+        gap: 10px; /* Space between the cards */
+        padding: 10px; /* Padding on the edges of the screen */
+    }
+
+    .product-card {
+        margin: 0; /* Resets margins to fit the grid perfectly */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .product-name {
+        font-size: 0.9rem; /* Makes the title fit better on small screens */
+        margin-bottom: 5px;
+    }
+
+    .product-price {
+        font-size: 0.85rem; /* Scales down the price text slightly */
+    }
+
+    /* Optional: Make the Add to Cart button smaller for mobile */
+    .product-card .btn {
+        padding: 8px 5px;
+        font-size: 0.8rem;
+    }
+}
