@@ -758,7 +758,7 @@ function updateCartUI() {
             
             <div class="checkout-section">
                 <h4>Shipping Details</h4>
-                <div class="form-group"><label>FULL NAME</label><input type="text" id="c-name" class="form-input" placeholder="Mahmoud Roshdy"></div>
+                <div class="form-group"><label>FULL NAME</label><input type="text" id="c-name" class="form-input" placeholder="Name"></div>
                 <div class="form-group"><label>PHONE NUMBER</label><input type="tel" id="c-phone" class="form-input" placeholder="01xxxxxxxxx"></div>
                 <div class="form-group">
                     <label>GOVERNORATE</label>
